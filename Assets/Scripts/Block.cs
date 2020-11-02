@@ -2,8 +2,28 @@
 
 public class Block : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    GameManager gameManager;
+
+    public int health;
+    public int point;
+    
+    public Sprite block;
+
+    void Start()
     {
-        Destroy(gameObject);
+        gameManager = FindObjectOfType<GameManager>();
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        health--;
+        if(health == 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = block;
+        }
+        else
+        {
+            gameManager.sumPoint += point;
+            Destroy(gameObject);
+        }
     }
 }

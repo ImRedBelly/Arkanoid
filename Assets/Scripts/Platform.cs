@@ -2,22 +2,13 @@
 
 public class Platform : MonoBehaviour
 {
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        Vector3 mousePixelPosition = Input.mousePosition;
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePixelPosition);
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 
-        Vector3 padNewPosition = mouseWorldPosition;
-
-        padNewPosition.z = 0;
-        padNewPosition.y = -4.3f;
-
-        transform.position = padNewPosition;
+        mouseWorldPosition.x = mouseWorldPosition.x > 7.7f ? 7.7f : mouseWorldPosition.x;
+        mouseWorldPosition.x = mouseWorldPosition.x < -7.7f ? -7.7f : mouseWorldPosition.x;
+        
+        transform.position = new Vector2(mouseWorldPosition.x, transform.position.y);
     }
 }
