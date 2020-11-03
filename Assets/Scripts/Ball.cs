@@ -28,11 +28,12 @@ public class Ball : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
                 StartBall();
         }
+        print(rb.velocity.magnitude);
     }
     void StartBall()
     {
-        Vector2 force = new Vector2(Random.Range(-1.0f, 1.0f), 1);
-        rb.AddForce(force * speed);
+        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+        rb.AddForce(force.normalized * speed);
         isStarted = true;
     }
 }
