@@ -3,8 +3,9 @@
 public class Block : MonoBehaviour
 {
     GameManager gameManager;
+    LevelManager levelManager;
 
-    public int health;
+    [Tooltip("Количевство жизней")]public int health;
     public int point;
     
     public Sprite block;
@@ -12,6 +13,9 @@ public class Block : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        levelManager = FindObjectOfType<LevelManager>();
+
+        levelManager.BlockCreated();
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,7 +26,8 @@ public class Block : MonoBehaviour
         }
         else
         {
-            gameManager.sumPoint += point;
+            gameManager.AddScore(point);
+            levelManager.BlockDestroyed();
             Destroy(gameObject);
         }
     }

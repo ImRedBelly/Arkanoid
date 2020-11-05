@@ -28,7 +28,7 @@ public class Ball : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
                 StartBall();
         }
-        print(rb.velocity.magnitude);
+        //print(rb.velocity.magnitude);
     }
     void StartBall()
     {
