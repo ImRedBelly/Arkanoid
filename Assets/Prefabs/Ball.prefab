@@ -136,4 +136,4 @@ MonoBehaviour:
   rb: {fileID: 1042878865614592204}
   platform: {fileID: 0}
   sumPoint: 0
-  speed: 500
+  speed: 10

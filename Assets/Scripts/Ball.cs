@@ -5,35 +5,47 @@ public class Ball : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Platform platform;
-
-    public int sumPoint;
     public float speed;
+
+    GameManager gameManager;
     bool isStarted;
 
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
     void Update()
     {
         if (isStarted)
         {
-            if(transform.position.y < -5.3f)
+            if (transform.position.y < -5.3f)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            } 
+                isStarted = false;
+                gameManager.DeathСomes();
+                StartBall();
+            }
         }
         else
         {
-            Vector2 platformPosotion = platform.transform.position;
-            Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.7f);
-            transform.position = ballNewPosition;
-
-            if (Input.GetMouseButtonDown(0))
-                StartBall();
+            StartBall();
         }
-        //print(rb.velocity.magnitude);
+    }
+    void AddForceBall()
+    {
+        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+
+        rb.velocity = (force.normalized * speed);
+        isStarted = true;
     }
     void StartBall()
     {
-        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
-        rb.AddForce(force.normalized * speed);
-        isStarted = true;
+        Vector2 platformPosotion = platform.transform.position;
+        Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.7f);
+        transform.position = ballNewPosition;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            AddForceBall();
+        }
     }
 }
