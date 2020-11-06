@@ -18,10 +18,10 @@ public class Ball : MonoBehaviour
     {
         if (isStarted)
         {
-            if (transform.position.y < -5.3f)
+            if (transform.position.y < -5.3f) //мяч ниже платформы
             {
                 isStarted = false;
-                gameManager.DeathСomes();
+                gameManager.DeathСomes();  //убираем сердечко
                 StartBall();
             }
         }

@@ -28,12 +28,11 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-
         DontDestroyOnLoad(gameObject);
     }
     void Update()
     {
-        AddScore(0);
+        AddScore(0); 
         restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -50,20 +49,20 @@ public class GameManager : MonoBehaviour
                 pauseActiv = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)) //Перезагрузка уровня
         {
-            score = 0;
+            score = 0; // обновляю счет
             SceneManager.LoadScene(0);
-            restart.gameObject.SetActive(false);
-            health = 3;
-            pauseActiv = false;
+            restart.gameObject.SetActive(false); //скрываю конечный экран
+            health = 3;     //возвращаю жизни
+            pauseActiv = false;     //снимаю паузу с платформы
             for (int i = 0; i < heart.Length; i++)
             {
-                heart[i].gameObject.SetActive(true);
+                heart[i].gameObject.SetActive(true); 
             }
         }
     }
-    public void AddScore(int addScore)
+    public void AddScore(int addScore) 
     {
         score += addScore;
         point.text = "POINTS: " + score;
@@ -71,10 +70,10 @@ public class GameManager : MonoBehaviour
     public void DeathСomes()
     {
         health--;
-        heart[health].gameObject.SetActive(false);
+        heart[health].gameObject.SetActive(false); //убираю сердечки
         if (health == 0)
         {
-            pauseActiv = true;
+            pauseActiv = true; //Чтобы платформа не двигалась во время проигрыша:)
             restart.gameObject.SetActive(true);
         }
     }
