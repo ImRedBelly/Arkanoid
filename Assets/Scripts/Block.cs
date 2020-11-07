@@ -2,33 +2,53 @@
 
 public class Block : MonoBehaviour
 {
+    public Sprite block;
+    [Tooltip("Количевство жизней")]
+    public int health;
+    public int point;
+    public bool isNotDestroy;
+    public bool isInvisible;
+
     GameManager gameManager;
     LevelManager levelManager;
-
-    [Tooltip("Количевство жизней")]public int health;
-    public int point;
-    
-    public Sprite block;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
-
         levelManager.BlockCreated();
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        health--;
-        if(health == 1)
+        if (isInvisible) 
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = block;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
         {
-            gameManager.AddScore(point);
-            levelManager.BlockDestroyed();
-            Destroy(gameObject);
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isNotDestroy)
+        {
+            isInvisible = false;
+        }
+        else
+        {
+            isInvisible = false;
+            health--;
+            if (health == 1)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = block;
+            }
+            else
+            {
+                gameManager.AddScore(point);
+                levelManager.BlockDestroyed();
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+
 public class Platform : MonoBehaviour
 {
-    GameManager gameManager;
     public bool autoPlay;
-    Ball ball;
     public float MaxX;
+
+    GameManager gameManager;
+    Ball ball;
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -27,7 +30,6 @@ public class Platform : MonoBehaviour
                 Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseWorldPosition.x = Mathf.Clamp(mouseWorldPosition.x, -MaxX, MaxX);
                 transform.position = new Vector2(mouseWorldPosition.x, transform.position.y);
-                
             }
         }
     }

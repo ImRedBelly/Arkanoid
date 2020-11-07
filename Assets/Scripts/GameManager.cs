@@ -10,10 +10,9 @@ public class GameManager : MonoBehaviour
     public Text point;
 
     public int score;
-
+    public int health = 3;
     public bool pauseActiv;
 
-   public int health = 3;
     void Awake()
     {
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
@@ -26,10 +25,12 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
+
     void Update()
     {
         AddScore(0); 
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) //Перезагрузка уровня
         {
             score = 0; // обновляю счет
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0);  //при resrtart возвращаю в начало игры
             restart.gameObject.SetActive(false); //скрываю конечный экран
             health = 3;     //возвращаю жизни
             pauseActiv = false;     //снимаю паузу с платформы

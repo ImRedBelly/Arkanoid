@@ -4,11 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int blockCount;
-    void Start()
-    {
-        //Block[] allBlock = FindObjectsOfType<Block>();
-        //blockCount = allBlock.Length;
-    }
+
     public void BlockCreated()
     {
         blockCount++;
