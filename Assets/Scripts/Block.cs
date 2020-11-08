@@ -16,7 +16,11 @@ public class Block : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
-        levelManager.BlockCreated();
+
+        if (!isNotDestroy) //если блок неразрушаемый, то в н едобавлять его
+        {
+            levelManager.BlockCreated();
+        }
     }
     void Update()
     {

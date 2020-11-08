@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 874786256364767704}
   - component: {fileID: 874786256364767707}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: TriangleWood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.8, y: 1.4}
+    oldSize: {x: 1.75, y: 0.875}
     newSize: {x: 1.4, y: 0.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -108,13 +108,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.007972136, y: 0.67120767}
-      - {x: -0.90896976, y: -0.21482569}
-      - {x: -1.4243857, y: -0.68827695}
-      - {x: -0.5114031, y: -0.69272673}
-      - {x: 1.3972229, y: -0.6904395}
-      - {x: 1.0603061, y: -0.33943903}
-      - {x: 0.04488191, y: 0.6759371}
+    - - {x: -0.01688566, y: 0.4375}
+      - {x: -0.86858034, y: -0.39347443}
+      - {x: -0.875, y: -0.4375}
+      - {x: 0.875, y: -0.4375}
+      - {x: 0.87285995, y: -0.38885584}
+      - {x: 0.019703388, y: 0.43536043}
 --- !u!114 &874786256364767707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a89857283bd5ad4baf17a3d6507871d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  block: {fileID: 21300000, guid: 082e262617777a84bb1e4b94d0962d73, type: 3}
   health: 2
   point: 2
-  block: {fileID: 21300000, guid: 082e262617777a84bb1e4b94d0962d73, type: 3}
+  isNotDestroy: 0
+  isInvisible: 0

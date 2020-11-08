@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87177f4979016f14fb070885ba2c588e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoPlay: 0
+  MaxX: 0
 --- !u!60 &189260043797554466
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +114,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.2, y: 0.7}
+    oldSize: {x: 1.4666667, y: 0.46666667}
     newSize: {x: 2.2, y: 0.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -120,9 +122,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.54816496, y: 0.3499999}
-      - {x: -0.5958315, y: 0.3499999}
-      - {x: -1.1074842, y: 0.17328748}
-      - {x: -1.1, y: -0.35}
-      - {x: 1.1, y: -0.35}
-      - {x: 1.100151, y: 0.16625652}
+    - - {x: 0.72675776, y: -0.23115158}
+      - {x: 0.7302623, y: 0.09313631}
+      - {x: 0.027332783, y: 0.23370457}
+      - {x: -0.10613489, y: 0.23461914}
+      - {x: -0.73333335, y: 0.09431909}
+      - {x: -0.73333335, y: -0.23333333}

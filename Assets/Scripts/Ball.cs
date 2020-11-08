@@ -35,7 +35,8 @@ public class Ball : MonoBehaviour
 
     void AddForceBall()
     {
-        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+       // Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+        Vector2 force = new Vector2(0, 1);
 
         rb.velocity = (force.normalized * speed);
         isStarted = true;
@@ -44,7 +45,7 @@ public class Ball : MonoBehaviour
     void StartBall()
     {
         Vector2 platformPosotion = platform.transform.position;
-        Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.7f);
+        Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.4f);
         transform.position = ballNewPosition;
 
         if (gameManager.pauseActiv) // Во время проигрыша не разрешает запустить мяч
