@@ -5,26 +5,24 @@ public class Ball : MonoBehaviour
     public Rigidbody2D rb;
     public Platform platform;
 
-    public float speed;
-
     GameManager gameManager;
 
+    public float speed;
     bool isStarted;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
     }
-
     void Update()
     {
         if (isStarted)
         {
-            if (transform.position.y < -5.3f) //мяч ниже платформы
+            if (transform.position.y < -5.3f)
             {
                 isStarted = false;
-                gameManager.DeathСomes();  //убираем сердечко
-                StartBall();
+                gameManager.DeathСomes();
+                PositionBall();
             }
         }
         else
@@ -32,32 +30,31 @@ public class Ball : MonoBehaviour
             StartBall();
         }
     }
-
-    void AddForceBall()
-    {
-       // Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
-        Vector2 force = new Vector2(0, 1);
-
-        rb.velocity = (force.normalized * speed);
-        isStarted = true;
-    }
-
+ 
     void StartBall()
     {
-        Vector2 platformPosotion = platform.transform.position;
-        Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.4f);
-        transform.position = ballNewPosition;
+        PositionBall();
 
-        if (gameManager.pauseActiv) // Во время проигрыша не разрешает запустить мяч
-        {
-            
-        }
-        else
+        if (!gameManager.pauseActiv)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 AddForceBall();
             }
         }
+    }
+
+    private void PositionBall()
+    {
+        Vector2 platformPosotion = platform.transform.position;
+        Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.4f);
+        transform.position = ballNewPosition;
+    }
+
+    void AddForceBall()
+    {
+        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+        rb.velocity = (force.normalized * speed);
+        isStarted = true;
     }
 }

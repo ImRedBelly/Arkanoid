@@ -9,6 +9,8 @@ public class Block : MonoBehaviour
     public bool isNotDestroy;
     public bool isInvisible;
 
+
+    SpriteRenderer spriteImage;
     GameManager gameManager;
     LevelManager levelManager;
 
@@ -16,43 +18,43 @@ public class Block : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
+        spriteImage = GetComponent<SpriteRenderer>();
 
-        if (!isNotDestroy) //если блок неразрушаемый, то в н едобавлять его
+        if (!isNotDestroy)
         {
             levelManager.BlockCreated();
         }
-    }
-    void Update()
-    {
-        if (isInvisible) 
+        if (isInvisible)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        }
-        else
-        {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            spriteImage.enabled = false;
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isNotDestroy)
+        isInvisible = false;
+        if (!isInvisible)
         {
-            isInvisible = false;
+            spriteImage.enabled = true;
+            return;
+        }
+
+
+        if (!isNotDestroy)
+        {
+            return;
+        }
+
+        health--;
+        if (health == 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = block;
         }
         else
         {
-            isInvisible = false;
-            health--;
-            if (health == 1)
-            {
-                gameObject.GetComponent<SpriteRenderer>().sprite = block;
-            }
-            else
-            {
-                gameManager.AddScore(point);
-                levelManager.BlockDestroyed();
-                Destroy(gameObject);
-            }
+            gameManager.AddScore(point);
+            levelManager.BlockDestroyed();
+            Destroy(gameObject);
         }
+
     }
 }
