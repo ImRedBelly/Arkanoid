@@ -410,6 +410,11 @@ PrefabInstance:
       propertyPath: isInvisible
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5958934991101294644, guid: 8496b786389136d49b5f30b7ae509e7b,
+        type: 3}
+      propertyPath: isNotDestroy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5958934991101294647, guid: 8496b786389136d49b5f30b7ae509e7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -689,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 1042878865614592242, guid: 6ab1e9555e3676d46a2ce2bc7967ac9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.84
+      value: -2.41
       objectReference: {fileID: 0}
     - target: {fileID: 1042878865614592242, guid: 6ab1e9555e3676d46a2ce2bc7967ac9d,
         type: 3}
@@ -1250,13 +1255,25 @@ PrefabInstance:
     - target: {fileID: 9039622681343142577, guid: a1846583c01d0dc45a08f201484a7528,
         type: 3}
       propertyPath: isNotDestroy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9039622681343142577, guid: a1846583c01d0dc45a08f201484a7528,
         type: 3}
       propertyPath: isInvisible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9039622681343142577, guid: a1846583c01d0dc45a08f201484a7528,
+        type: 3}
+      propertyPath: pickupPrefab
+      value: 
+      objectReference: {fileID: 2311677771889485265, guid: 3c235f27cc49cc24bba2e6882d7efbe4,
+        type: 3}
+    - target: {fileID: 9039622681343142577, guid: a1846583c01d0dc45a08f201484a7528,
+        type: 3}
+      propertyPath: parcikleEffectPrefab
+      value: 
+      objectReference: {fileID: 1628744458893394, guid: e243632bb3aff9549abdcfcc2ef0c4f0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1846583c01d0dc45a08f201484a7528, type: 3}
 --- !u!1001 &189260043713666804

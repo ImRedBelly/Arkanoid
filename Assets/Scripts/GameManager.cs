@@ -39,16 +39,15 @@ public class GameManager : MonoBehaviour
         {
             if (pauseActiv)
             {
-                pause.gameObject.SetActive(false);
                 Time.timeScale = 1f;
                 pauseActiv = false;
             }
             else
             {
-                pause.gameObject.SetActive(true);
                 Time.timeScale = 0f;
                 pauseActiv = true;
             }
+            pause.gameObject.SetActive(pauseActiv);
         }
         if (Input.GetKeyDown(KeyCode.R)) //Перезагрузка уровня
         {

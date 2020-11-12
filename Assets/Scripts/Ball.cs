@@ -18,7 +18,7 @@ public class Ball : MonoBehaviour
     {
         if (isStarted)
         {
-            if (transform.position.y < -5.3f)
+            if (transform.position.y < -5.3f)  //TODO переделать метод мяча при промахе!
             {
                 isStarted = false;
                 gameManager.DeathСomes();
@@ -53,7 +53,8 @@ public class Ball : MonoBehaviour
 
     void AddForceBall()
     {
-        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+        //Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+        Vector2 force = new Vector2(0, 1);
         rb.velocity = (force.normalized * speed);
         isStarted = true;
     }
