@@ -2,13 +2,14 @@
 
 public class Ball : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Platform platform;
-
     GameManager gameManager;
 
+    public Rigidbody2D rb;
+    public Platform platform;
+    public Ball[] balls;
     public float speed;
-    bool isStarted;
+    public bool isStarted;
+    public bool isRevers = false;
 
     void Start()
     {
@@ -16,22 +17,14 @@ public class Ball : MonoBehaviour
     }
     void Update()
     {
-        if (isStarted)
-        {
-            if (transform.position.y < -5.3f)  //TODO переделать метод мяча при промахе!
-            {
-                isStarted = false;
-                gameManager.DeathСomes();
-                PositionBall();
-            }
-        }
-        else
+        if (!isStarted)
         {
             StartBall();
         }
+        print(rb.velocity.magnitude);
     }
- 
-    void StartBall()
+
+    public void StartBall()
     {
         PositionBall();
 
@@ -44,18 +37,57 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void PositionBall()
+    public void PositionBall()
     {
         Vector2 platformPosotion = platform.transform.position;
-        Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.4f);
+        Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.5f);
         transform.position = ballNewPosition;
+
     }
 
-    void AddForceBall()
+    public void AddForceBall()
     {
         //Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
         Vector2 force = new Vector2(0, 1);
         rb.velocity = (force.normalized * speed);
         isStarted = true;
+    }
+    public void Restart()
+    {
+        isStarted = false;
+        rb.velocity = Vector2.zero;
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Down"))
+        {
+
+            balls = FindObjectsOfType<Ball>();
+            if (balls.Length > 1)
+            {
+                print("он не один");
+                Destroy(gameObject);
+            }
+            else
+            {
+                print("он один");
+                isStarted = false;
+                gameManager.DeathСomes();
+                PositionBall();
+            }
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isRevers)
+        {
+            if (collision.gameObject.CompareTag("Platform"))
+            {
+                print("Ball stop");
+                Restart();
+                isRevers = false;
+            }
+        }
     }
 }

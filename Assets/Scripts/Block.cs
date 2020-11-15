@@ -2,9 +2,9 @@
 
 public class Block : MonoBehaviour
 {
-    public GameObject pickupPrefab;
+    public GameObject[] pickupPrefab;
     public GameObject parcikleEffectPrefab;
-    public Sprite block;
+    public Sprite[] alien;
     [Tooltip("Количевство жизней")]
     public int health;
     public int point;
@@ -33,36 +33,39 @@ public class Block : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (isInvisible)
         {
             spriteImage.enabled = true;
             isInvisible = false;
             return;
         }
-
         if (isNotDestroy)
         {
             return;
         }
-
         health--;
-        if (health == 1)
+        if (health == 0)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = block;
-            return;
+            DestroyBlock();
         }
-        DestroyBlock();
-
+        else
+        {
+            spriteImage.sprite = alien[health - 1];
+        }
     }
     void DestroyBlock()
     {
         gameManager.AddScore(point);
         levelManager.BlockDestroyed();
         Destroy(gameObject);
-        if(pickupPrefab != null)
+        if (pickupPrefab.Length != 0)
         {
-            Instantiate(pickupPrefab, transform.position, Quaternion.identity);
+            int randomPick = Random.Range(0, pickupPrefab.Length);
+            Instantiate(pickupPrefab[randomPick], transform.position, Quaternion.identity);
+            print(randomPick);
+        }
+        if(parcikleEffectPrefab != null)
+        {
             Instantiate(parcikleEffectPrefab, transform.position, Quaternion.identity);
         }
     }

@@ -8,10 +8,14 @@ public class GameManager : MonoBehaviour
     public Text pause;
     public Text restart;
     public Text point;
+    public Text timer;
 
     public int score;
     public int health = 3;
+    public float time;
     public bool pauseActiv;
+
+    int timeInt;
 
     void Awake()
     {
@@ -25,15 +29,26 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
-
     void Update()
     {
-        AddScore(0); 
+        if (time > 0)
+        {
+            time -=  Time.deltaTime;
+            timeInt = Mathf.RoundToInt(time);
+            timer.text = timeInt.ToString();
+            if(timeInt <= 0)
+            {
+                timer.text = "";
+            }
+        }
+       
+
+
+        AddScore(0);
         restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -49,27 +64,27 @@ public class GameManager : MonoBehaviour
             }
             pause.gameObject.SetActive(pauseActiv);
         }
-        if (Input.GetKeyDown(KeyCode.R)) //Перезагрузка уровня
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Restart();
         }
     }
 
+
     void Restart()
     {
-        score = 0; // обновляю счет
-          //при resrtart возвращаю в начало игры
-        restart.gameObject.SetActive(false); //скрываю конечный экран
-        health = 3;     //возвращаю жизни
-        pauseActiv = false;     //снимаю паузу с платформы
-        for (int i = 0; i < heart.Length; i++)
+        score = 0;
+        restart.gameObject.SetActive(false);
+        health = 3;
+        pauseActiv = false;
+        for (int i = 0; i < health; i++)
         {
             heart[i].gameObject.SetActive(true);
         }
         SceneManager.LoadScene(0);
     }
 
-    public void AddScore(int addScore) 
+    public void AddScore(int addScore)
     {
         score += addScore;
         point.text = "POINTS: " + score;
@@ -77,12 +92,24 @@ public class GameManager : MonoBehaviour
     public void DeathСomes()
     {
         health--;
-        heart[health].gameObject.SetActive(false);
+        HeartMinus();
 
         if (health == 0)
         {
             pauseActiv = true;
             restart.gameObject.SetActive(true);
         }
+    }
+    public void HeartPlus()
+    {
+        for (int i = 0; i < health; i++)
+        {
+            heart[i].gameObject.SetActive(true);
+        }
+    }
+
+    public void HeartMinus()
+    {
+        heart[health].gameObject.SetActive(false);
     }
 }
