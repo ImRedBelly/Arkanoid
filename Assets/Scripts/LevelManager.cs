@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     {
         blockCount++;
     }
+
     public void BlockDestroyed()
     {
         blockCount--;

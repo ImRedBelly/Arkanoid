@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     public float time;
     public bool pauseActiv;
 
-    int timeInt;
-
     void Awake()
     {
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
@@ -29,25 +27,14 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
+
     void Update()
     {
-        if (time > 0)
-        {
-            time -=  Time.deltaTime;
-            timeInt = Mathf.RoundToInt(time);
-            timer.text = timeInt.ToString();
-            if(timeInt <= 0)
-            {
-                timer.text = "";
-            }
-        }
-       
-
-
         AddScore(0);
         restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
         if (Input.GetKeyDown(KeyCode.Space))
@@ -69,7 +56,6 @@ public class GameManager : MonoBehaviour
             Restart();
         }
     }
-
 
     void Restart()
     {
@@ -93,7 +79,6 @@ public class GameManager : MonoBehaviour
     {
         health--;
         HeartMinus();
-
         if (health == 0)
         {
             pauseActiv = true;

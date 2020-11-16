@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PickupRevers : MonoBehaviour
+public class PickupRestart : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {

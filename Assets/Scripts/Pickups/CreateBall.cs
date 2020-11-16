@@ -5,6 +5,7 @@ public class CreateBall : MonoBehaviour
 {
     Ball balls;
     Ball newBall;
+
     void Start()
     {
         balls = FindObjectOfType<Ball>();

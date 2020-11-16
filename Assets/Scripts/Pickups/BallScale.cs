@@ -11,7 +11,7 @@ public class BallScale : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             BigObject();
-            StartCoroutine(SmallObject()); //Возвращает исходный размер и удаляет pickup
+            StartCoroutine(SmallObject());
         }
     }
     void BigObject()
@@ -22,7 +22,7 @@ public class BallScale : MonoBehaviour
     IEnumerator SmallObject()
     {
         yield return new WaitForSeconds(7.0f);
-        Ball ball = FindObjectOfType<Ball>();
+        Ball ball = FindObjectOfType<Ball>();// ищет он тут все время объект Ball?
         ball.transform.localScale = before;
         Destroy(gameObject);
     }

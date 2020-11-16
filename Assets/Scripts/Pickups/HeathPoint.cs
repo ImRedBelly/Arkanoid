@@ -11,13 +11,13 @@ public class HeathPoint : MonoBehaviour
             Healing();
         }
     }
-    void Healing()
+    void Healing()  
     {
         gameManager = FindObjectOfType<GameManager>();
         if (gameManager.health <= 6)
         {
             gameManager.health += point;
-            gameManager.HeartPlus();
+            gameManager.HeartPlus();        //Почему здесь вызываются два метода?
             gameManager.HeartMinus();
         }
         Destroy(gameObject);

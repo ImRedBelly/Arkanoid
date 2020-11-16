@@ -8,6 +8,7 @@ public class Block : MonoBehaviour
     [Tooltip("Количевство жизней")]
     public int health;
     public int point;
+    public int chance;
     public bool isNotDestroy;
     public bool isInvisible;
 
@@ -18,6 +19,7 @@ public class Block : MonoBehaviour
 
     void Start()
     {
+        chance = Random.Range(0, 100);
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
         spriteImage = GetComponent<SpriteRenderer>();
@@ -53,20 +55,24 @@ public class Block : MonoBehaviour
             spriteImage.sprite = alien[health - 1];
         }
     }
+
     void DestroyBlock()
     {
         gameManager.AddScore(point);
         levelManager.BlockDestroyed();
         Destroy(gameObject);
-        if (pickupPrefab.Length != 0)
+
+        if(chance > 50)
         {
-            int randomPick = Random.Range(0, pickupPrefab.Length);
-            Instantiate(pickupPrefab[randomPick], transform.position, Quaternion.identity);
-            print(randomPick);
-        }
-        if(parcikleEffectPrefab != null)
-        {
-            Instantiate(parcikleEffectPrefab, transform.position, Quaternion.identity);
+            if (pickupPrefab.Length != 0)
+            {
+                int randomPick = Random.Range(0, pickupPrefab.Length);
+                Instantiate(pickupPrefab[randomPick], transform.position, Quaternion.identity);
+            }
+            if (parcikleEffectPrefab != null)
+            {
+                Instantiate(parcikleEffectPrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 }

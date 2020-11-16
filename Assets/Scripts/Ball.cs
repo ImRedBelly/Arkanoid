@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
     public Rigidbody2D rb;
     public Platform platform;
     public Ball[] balls;
+
     public float speed;
     public bool isStarted;
     public bool isRevers = false;
@@ -21,7 +22,6 @@ public class Ball : MonoBehaviour
         {
             StartBall();
         }
-        print(rb.velocity.magnitude);
     }
 
     public void StartBall()
@@ -42,7 +42,6 @@ public class Ball : MonoBehaviour
         Vector2 platformPosotion = platform.transform.position;
         Vector2 ballNewPosition = new Vector2(platformPosotion.x, platformPosotion.y + 0.5f);
         transform.position = ballNewPosition;
-
     }
 
     public void AddForceBall()
@@ -59,10 +58,8 @@ public class Ball : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.CompareTag("Down"))
         {
-
             balls = FindObjectsOfType<Ball>();
             if (balls.Length > 1)
             {
@@ -84,7 +81,6 @@ public class Ball : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Platform"))
             {
-                print("Ball stop");
                 Restart();
                 isRevers = false;
             }

@@ -122,7 +122,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a89857283bd5ad4baf17a3d6507871d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupPrefab: []
+  pickupPrefab:
+  - {fileID: 4026907305641961042, guid: 87c70edeb33f9bc4f90ff5a0a3222008, type: 3}
+  - {fileID: 4026907305641961042, guid: bc1bf1b1541f4984e8c0ca42eb4e90d0, type: 3}
+  - {fileID: 5872153583513344033, guid: 5e6132e42175d6a4b92f5df8807060b5, type: 3}
+  - {fileID: 3288360692406367198, guid: 23bc5bbc9d80e5c49a6ddab5a3f6b18e, type: 3}
+  - {fileID: 3288360692406367198, guid: badff2852f5c5f941938ebedff9bbdbe, type: 3}
+  - {fileID: 2537171089040697270, guid: 39cc1d7da47e1ba4199b98e7acff7cbf, type: 3}
+  - {fileID: 2537171089040697270, guid: d5e6054d0fe5c664e85bbdba31ea6d0a, type: 3}
+  - {fileID: 7522561909897821292, guid: e80319fbee46cfb4fb7fdaef65a7897e, type: 3}
+  - {fileID: 2311677771889485265, guid: 75ae5f6393d0cde49ad1d3203106d435, type: 3}
+  - {fileID: 2311677771889485265, guid: 3c235f27cc49cc24bba2e6882d7efbe4, type: 3}
+  - {fileID: 7682387598417540159, guid: 06619144850916d40aa52890c42ae7eb, type: 3}
+  - {fileID: 7682387598417540159, guid: 499b3c87c791f904e9320c7e22c5c461, type: 3}
   parcikleEffectPrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   alien:
   - {fileID: -1644876321013570226, guid: b6512c6400ed3d94fae68cc703c6838d, type: 3}
@@ -130,5 +142,6 @@ MonoBehaviour:
   - {fileID: 6659998763181260359, guid: b6512c6400ed3d94fae68cc703c6838d, type: 3}
   health: 3
   point: 1
+  chance: 0
   isNotDestroy: 0
   isInvisible: 0

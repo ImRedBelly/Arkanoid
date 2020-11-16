@@ -4,6 +4,7 @@ using System.Collections;
 public class BallSpeed : MonoBehaviour
 {
     public float speed;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Platform"))

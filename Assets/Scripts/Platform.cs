@@ -15,11 +15,7 @@ public class Platform : MonoBehaviour
     }
     void Update()
     {
-        if (gameManager.pauseActiv)
-        {
-
-        }
-        else
+        if (!gameManager.pauseActiv)
         {
             if (autoPlay)
             {
