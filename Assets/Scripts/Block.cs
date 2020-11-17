@@ -69,10 +69,11 @@ public class Block : MonoBehaviour
                 int randomPick = Random.Range(0, pickupPrefab.Length);
                 Instantiate(pickupPrefab[randomPick], transform.position, Quaternion.identity);
             }
-            if (parcikleEffectPrefab != null)
-            {
-                Instantiate(parcikleEffectPrefab, transform.position, Quaternion.identity);
-            }
+            
+        }
+        if (parcikleEffectPrefab != null)
+        {
+            Instantiate(parcikleEffectPrefab, transform.position, Quaternion.identity);
         }
     }
 }

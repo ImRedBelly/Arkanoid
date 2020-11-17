@@ -17,8 +17,8 @@ public class HeathPoint : MonoBehaviour
         if (gameManager.health <= 6)
         {
             gameManager.health += point;
-            gameManager.HeartPlus();        //Почему здесь вызываются два метода?
-            gameManager.HeartMinus();
+            gameManager.HeartPlus();
+
         }
         Destroy(gameObject);
     }

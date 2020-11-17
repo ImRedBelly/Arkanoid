@@ -46,8 +46,8 @@ public class Ball : MonoBehaviour
 
     public void AddForceBall()
     {
-        //Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
-        Vector2 force = new Vector2(0, 1);
+        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
+        //Vector2 force = new Vector2(0, 1);
         rb.velocity = (force.normalized * speed);
         isStarted = true;
     }

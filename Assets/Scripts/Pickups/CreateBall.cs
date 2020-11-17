@@ -21,7 +21,7 @@ public class CreateBall : MonoBehaviour
     void ApplyEffect()
     {
         newBall = Instantiate(balls);
-        newBall.Restart();
+        newBall.AddForceBall();
         Destroy(gameObject);
     }
 }

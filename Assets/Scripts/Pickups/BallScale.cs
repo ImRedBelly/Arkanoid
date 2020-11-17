@@ -22,7 +22,7 @@ public class BallScale : MonoBehaviour
     IEnumerator SmallObject()
     {
         yield return new WaitForSeconds(7.0f);
-        Ball ball = FindObjectOfType<Ball>();// ищет он тут все время объект Ball?
+        Ball ball = FindObjectOfType<Ball>();
         ball.transform.localScale = before;
         Destroy(gameObject);
     }

@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
         {
             heart[i].gameObject.SetActive(true);
         }
+        heart[3].gameObject.SetActive(false);   //НУЖНО ИСПРАВИТЬ
         SceneManager.LoadScene(0);
     }
 
@@ -87,10 +88,7 @@ public class GameManager : MonoBehaviour
     }
     public void HeartPlus()
     {
-        for (int i = 0; i < health; i++)
-        {
-            heart[i].gameObject.SetActive(true);
-        }
+        heart[health - 1].gameObject.SetActive(true);
     }
 
     public void HeartMinus()
