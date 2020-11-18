@@ -3,34 +3,42 @@ using System.Collections;
 
 public class BallSpeed : MonoBehaviour
 {
-    public float speed;
+    public float starSpeed;
+    public float bonusSpeed;
+    Ball[] ball;
+
+    private void Start()
+    {
+        ball = FindObjectsOfType<Ball>();
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            FastObject();
-            StartCoroutine(SlowObject());
+            StartCoroutine(SpeedBall());
         }
     }
-    void FastObject()
+
+    IEnumerator SpeedBall()
     {
-        Ball[] ball = FindObjectsOfType<Ball>();
-        for (int i = 0; i < ball.Length; i++)
-        {
-            ball[i].rb.velocity *= speed;
-        }
-
-
+        RatePlus(bonusSpeed);
+        yield return new WaitForSeconds(3.0f);
+        RateMinus(starSpeed);
     }
-    IEnumerator SlowObject()
+
+    void RatePlus(float multiplier)
     {
-        yield return new WaitForSeconds(7.0f);
-        Ball[] ball = FindObjectsOfType<Ball>();
         for (int i = 0; i < ball.Length; i++)
         {
-            ball[i].rb.velocity /= speed;
+            ball[i].rb.velocity *= multiplier;
         }
-        Destroy(gameObject);
+    } 
+    void RateMinus(float multiplier)
+    {
+        for (int i = 0; i < ball.Length; i++)
+        {
+            ball[i].rb.velocity /= multiplier;
+        }
     }
 }

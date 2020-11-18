@@ -3,29 +3,32 @@ using UnityEngine;
 
 public class PlatformScale : MonoBehaviour
 {
-
     public Vector2 before;
     public Vector2 after;
+    Platform platform;
+
+    void Start()
+    {
+        platform = FindObjectOfType<Platform>();    
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            BigObject();
-            StartCoroutine(SmallObject()); 
+            StartCoroutine(BigObject()); 
         }
     }
-    void BigObject()
+    
+    IEnumerator BigObject()
     {
-        Platform platform = FindObjectOfType<Platform>();
-        platform.transform.localScale = after;
+        Scale(after);
+        yield return new WaitForSeconds(3.0f);
+        Scale(before);
 
     }
-    IEnumerator SmallObject()
+    void Scale(Vector2 scale)
     {
-        yield return new WaitForSeconds(7.0f);
-        Platform platform = FindObjectOfType<Platform>();  // ищет он тут все время объект Platform?
-        platform.transform.localScale = before;
-        Destroy(gameObject);
+        platform.transform.localScale = scale;
     }
 }

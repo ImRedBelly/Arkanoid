@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public Text pause;
     public Text restart;
     public Text point;
-    public Text timer;
 
     public int score;
     public int health = 3;
@@ -63,12 +62,34 @@ public class GameManager : MonoBehaviour
         restart.gameObject.SetActive(false);
         health = 3;
         pauseActiv = false;
-        for (int i = 0; i < health; i++)
-        {
-            heart[i].gameObject.SetActive(true);
-        }
-        heart[3].gameObject.SetActive(false);   //НУЖНО ИСПРАВИТЬ
+        ControlHeart();
         SceneManager.LoadScene(0);
+    }
+
+    public void ControlHeart()
+    {
+        for (int i = 0; i < heart.Length; i++)
+        {
+            if (i < health)
+            {
+                heart[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                heart[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void DeathСomes()
+    {
+        health--;
+        ControlHeart();
+        if (health == 0)
+        {
+            pauseActiv = true;
+            restart.gameObject.SetActive(true);
+        }
     }
 
     public void AddScore(int addScore)
@@ -76,23 +97,6 @@ public class GameManager : MonoBehaviour
         score += addScore;
         point.text = "POINTS: " + score;
     }
-    public void DeathСomes()
-    {
-        health--;
-        HeartMinus();
-        if (health == 0)
-        {
-            pauseActiv = true;
-            restart.gameObject.SetActive(true);
-        }
-    }
-    public void HeartPlus()
-    {
-        heart[health - 1].gameObject.SetActive(true);
-    }
 
-    public void HeartMinus()
-    {
-        heart[health].gameObject.SetActive(false);
-    }
+
 }

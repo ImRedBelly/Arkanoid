@@ -2,8 +2,13 @@
 
 public class HeathPoint : MonoBehaviour
 {
-    GameManager gameManager;
     public int point;
+    GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Platform"))
@@ -13,13 +18,10 @@ public class HeathPoint : MonoBehaviour
     }
     void Healing()  
     {
-        gameManager = FindObjectOfType<GameManager>();
         if (gameManager.health <= 6)
         {
             gameManager.health += point;
-            gameManager.HeartPlus();
-
+            gameManager.ControlHeart();
         }
-        Destroy(gameObject);
     }
 }

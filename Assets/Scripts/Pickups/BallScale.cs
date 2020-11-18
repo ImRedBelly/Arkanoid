@@ -1,29 +1,35 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class BallScale : MonoBehaviour
 {
     public Vector2 before;
     public Vector2 after;
+    Ball[] ball;
+    void Start()
+    {
+        ball = FindObjectsOfType<Ball>();
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            BigObject();
-            StartCoroutine(SmallObject());
+            StartCoroutine(BigObject());
         }
     }
-    void BigObject()
+
+    IEnumerator BigObject()
     {
-        Ball ball = FindObjectOfType<Ball>();
-        ball.transform.localScale = after;
+        Scale(after);
+        yield return new WaitForSeconds(3.0f);
+        Scale(before);
     }
-    IEnumerator SmallObject()
+    void Scale(Vector2 scale)
     {
-        yield return new WaitForSeconds(7.0f);
-        Ball ball = FindObjectOfType<Ball>();
-        ball.transform.localScale = before;
-        Destroy(gameObject);
+        for (int i = 0; i < ball.Length; i++)
+        {
+            ball[i].transform.localScale = scale;
+        }
     }
 }
