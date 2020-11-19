@@ -124,11 +124,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2205
-        width: 1375
-        height: 1049
+        y: 2207
+        width: 1294
+        height: 1047
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,7 +149,7 @@ TextureImporter:
         width: 1297
         height: 1047
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: Black Alien_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 78
         y: 0
-        width: 1375
-        height: 927
+        width: 1297
+        height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

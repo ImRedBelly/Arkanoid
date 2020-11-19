@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        AddScore(0);
-        restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (pauseActiv)
@@ -63,6 +61,7 @@ public class GameManager : MonoBehaviour
         health = 3;
         pauseActiv = false;
         ControlHeart();
+        AddScore(0);
         SceneManager.LoadScene(0);
     }
 
@@ -89,6 +88,7 @@ public class GameManager : MonoBehaviour
         {
             pauseActiv = true;
             restart.gameObject.SetActive(true);
+            restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
         }
     }
 
