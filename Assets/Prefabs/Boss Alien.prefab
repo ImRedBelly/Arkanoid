@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8775426869225591093}
   - component: {fileID: 8775426869225591094}
   - component: {fileID: 8775426869225591095}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss Alien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7412797, y: 1.1633333}
+    oldSize: {x: 1.6812738, y: 1.1611111}
     newSize: {x: 1.7412797, y: 1.1633333}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -132,5 +132,8 @@ MonoBehaviour:
   - {fileID: -5204950043331749193, guid: 6065e589cb5945243b7ae259494e3d86, type: 3}
   health: 5
   point: 5
+  chance: 0
   isNotDestroy: 0
   isInvisible: 0
+  explosiveRadius: 0
+  explosive: 0

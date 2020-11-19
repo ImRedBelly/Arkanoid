@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a89857283bd5ad4baf17a3d6507871d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupPrefab: {fileID: 0}
+  pickupPrefab:
+  - {fileID: 0}
   parcikleEffectPrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   alien:
   - {fileID: -5560921147795512839, guid: ca857af9c629e4943987b6df6735ae36, type: 3}
@@ -130,5 +131,8 @@ MonoBehaviour:
   - {fileID: 4157438386502718435, guid: ca857af9c629e4943987b6df6735ae36, type: 3}
   health: 3
   point: 1
+  chance: 0
   isNotDestroy: 0
   isInvisible: 0
+  explosiveRadius: 3
+  explosive: 1

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3088853777599909626}
   - component: {fileID: 3088853777599909625}
   - component: {fileID: 3088853777599909624}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Alien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3750001, y: 1.0494808}
+    oldSize: {x: 1.294, y: 1.0484804}
     newSize: {x: 1.3750001, y: 1.0494808}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,5 +130,8 @@ MonoBehaviour:
   - {fileID: 5719135096641028000, guid: 03191f7eac9eca84c9c4decaf7316620, type: 3}
   health: 3
   point: 1
+  chance: 0
   isNotDestroy: 0
   isInvisible: 0
+  explosiveRadius: 0
+  explosive: 0

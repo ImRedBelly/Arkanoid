@@ -2,16 +2,8 @@
 
 public class CreateBall : MonoBehaviour
 {
-    Ball balls;
-    Ball newBall;
-
-    void Start()
-    {
-        balls = FindObjectOfType<Ball>();
-    }
     void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.CompareTag("Platform"))
         {
             ApplyEffect();
@@ -19,8 +11,7 @@ public class CreateBall : MonoBehaviour
     }
     void ApplyEffect()
     {
-        newBall = Instantiate(balls);
-        newBall.AddForceBall();
-        Destroy(gameObject);
+        Ball balls = FindObjectOfType<Ball>();
+        balls.Dublicate();
     }
 }

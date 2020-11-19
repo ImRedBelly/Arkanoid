@@ -5,12 +5,21 @@ public class Block : MonoBehaviour
     public GameObject[] pickupPrefab;
     public GameObject parcikleEffectPrefab;
     public Sprite[] alien;
+
     [Tooltip("Количевство жизней")]
     public int health;
     public int point;
     public int chance;
+
     public bool isNotDestroy;
     public bool isInvisible;
+
+    [Header("Explosive")]
+    public float explosiveRadius;
+    public bool explosive;
+
+
+
 
 
     SpriteRenderer spriteImage;
@@ -62,18 +71,53 @@ public class Block : MonoBehaviour
         levelManager.BlockDestroyed();
         Destroy(gameObject);
 
-        if(chance > 50)
+        if (chance > 50)
         {
             if (pickupPrefab.Length != 0)
             {
                 int randomPick = Random.Range(0, pickupPrefab.Length);
                 Instantiate(pickupPrefab[randomPick], transform.position, Quaternion.identity);
             }
-            
+
         }
         if (parcikleEffectPrefab != null)
         {
             Instantiate(parcikleEffectPrefab, transform.position, Quaternion.identity);
         }
+        if (explosive)
+        {
+            Explode()
+;
+        }
+    }
+
+    void Explode()
+    {
+        int layerMask = LayerMask.GetMask("Alien");
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosiveRadius, layerMask);
+        //for (int i = 0; i < colliders.Length; i++)
+        //{
+        //    print(colliders[i].name);
+        //}
+        foreach(Collider2D col in colliders)
+        {
+            Block block = col.GetComponent<Block>();
+            if (isNotDestroy)
+            {
+                //неразрушаемый блок
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                block.DestroyBlock();
+            }
+            //тегами
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosiveRadius);
     }
 }

@@ -7,12 +7,17 @@ public class PickupRestart : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             ApplyEffect();
+            Destroy(gameObject);
         }
     }
     void ApplyEffect()
     {
-        Ball ball = FindObjectOfType<Ball>();
-        ball.isRevers = true;
-        Destroy(gameObject);
+        Ball[] ball = FindObjectsOfType<Ball>();
+        foreach(Ball balls in ball)
+        {
+            balls.ActivateMagnet();
+        }
+        
+
     }
 }
