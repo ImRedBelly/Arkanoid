@@ -26,12 +26,15 @@ public class Block : MonoBehaviour
     GameManager gameManager;
     LevelManager levelManager;
 
+
     void Start()
     {
         chance = Random.Range(0, 100);
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
+
         spriteImage = GetComponent<SpriteRenderer>();
+
 
         if (!isNotDestroy)
         {
@@ -44,6 +47,14 @@ public class Block : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Ball[] ball = FindObjectsOfType<Ball>();  // при коллизии с мячом он проверяет, взрывной ли он, если да, то взрывается
+        foreach (Ball balls in ball)
+        {
+            if (balls.explosive) // тут проверка
+            {
+                balls.ExplodeBall(); 
+            }
+        }
         if (isInvisible)
         {
             spriteImage.enabled = true;
@@ -54,8 +65,9 @@ public class Block : MonoBehaviour
         {
             return;
         }
+
         health--;
-        if (health == 0)
+        if (health <= 0)
         {
             DestroyBlock();
         }
@@ -65,7 +77,7 @@ public class Block : MonoBehaviour
         }
     }
 
-    void DestroyBlock()
+    public void DestroyBlock() //уничтожение блока
     {
         gameManager.AddScore(point);
         levelManager.BlockDestroyed();
@@ -78,7 +90,6 @@ public class Block : MonoBehaviour
                 int randomPick = Random.Range(0, pickupPrefab.Length);
                 Instantiate(pickupPrefab[randomPick], transform.position, Quaternion.identity);
             }
-
         }
         if (parcikleEffectPrefab != null)
         {
@@ -86,8 +97,7 @@ public class Block : MonoBehaviour
         }
         if (explosive)
         {
-            Explode()
-;
+            Explode();
         }
     }
 
@@ -95,23 +105,10 @@ public class Block : MonoBehaviour
     {
         int layerMask = LayerMask.GetMask("Alien");
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosiveRadius, layerMask);
-        //for (int i = 0; i < colliders.Length; i++)
-        //{
-        //    print(colliders[i].name);
-        //}
-        foreach(Collider2D col in colliders)
+        foreach (Collider2D col in colliders)
         {
             Block block = col.GetComponent<Block>();
-            if (isNotDestroy)
-            {
-                //неразрушаемый блок
-                Destroy(col.gameObject);
-            }
-            else
-            {
-                block.DestroyBlock();
-            }
-            //тегами
+            block.DestroyBlock();
         }
     }
 

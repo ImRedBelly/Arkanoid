@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2234790480183093376}
   m_Layer: 9
   m_Name: Red Alien
-  m_TagString: Untagged
+  m_TagString: Alien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.296, y: 1.0484804}
+    oldSize: {x: 0.9969231, y: 0.8065233}
     newSize: {x: 1.3750001, y: 1.0494808}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a89857283bd5ad4baf17a3d6507871d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupPrefab: []
+  pickupPrefab:
+  - {fileID: 7682387598417540159, guid: bf6a11d99f54469419a1fdf2a0ab1498, type: 3}
   parcikleEffectPrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   alien:
   - {fileID: -5561750705826590871, guid: 03ffb740404891548b5c04452b939009, type: 3}

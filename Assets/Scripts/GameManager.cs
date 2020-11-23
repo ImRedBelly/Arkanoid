@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -6,22 +7,22 @@ public class GameManager : MonoBehaviour
 {
     public Image[] heart;
     public Text pause;
-    public Text restart;
     public Text point;
+
 
     public int score;
     public int health = 3;
-    public float time;
     public bool pauseActiv;
 
     void Awake()
     {
+       
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
         for (int i = 0; i < gameManagers.Length; i++)
         {
             if (gameManagers[i].gameObject != gameObject)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
                 break;
             }
         }
@@ -57,12 +58,12 @@ public class GameManager : MonoBehaviour
     void Restart()
     {
         score = 0;
-        restart.gameObject.SetActive(false);
         health = 3;
         pauseActiv = false;
         ControlHeart();
         AddScore(0);
         SceneManager.LoadScene(0);
+        Destroy(gameObject);
     }
 
     public void ControlHeart()
@@ -86,9 +87,11 @@ public class GameManager : MonoBehaviour
         ControlHeart();
         if (health == 0)
         {
+
             pauseActiv = true;
-            restart.gameObject.SetActive(true);
-            restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
+            SceneManager.LoadScene(2);
+            //restart.gameObject.SetActive(true);
+            //restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
         }
     }
 

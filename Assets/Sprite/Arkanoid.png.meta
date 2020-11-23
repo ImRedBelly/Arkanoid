@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61eb4492ff2b56145a1d585a4360266c
+guid: 081f70a1813192e4a9c59959a78a86d7
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -45,44 +45,23 @@ TextureImporter:
       213: 769899042819645800
     second: Arkanoid_13
   - first:
-      213: 5554764665795673885
-    second: Arkanoid_0
+      213: -3723589279582726857
+    second: Arkanoid_14
   - first:
-      213: -2976546876389408034
-    second: Arkanoid_1
+      213: -5592993839075196490
+    second: Arkanoid_15
   - first:
-      213: -453043164950911701
-    second: Arkanoid_2
+      213: 158743746028086707
+    second: Arkanoid_16
   - first:
-      213: 4496115313050140396
-    second: Arkanoid_3
+      213: -1336799915547157690
+    second: Arkanoid_17
   - first:
-      213: -8816311741337034029
-    second: Arkanoid_4
+      213: -7001606723144589051
+    second: Arkanoid_18
   - first:
-      213: 4985793168555918383
-    second: Arkanoid_5
-  - first:
-      213: -7566477511207775024
-    second: Arkanoid_6
-  - first:
-      213: 6362199050503825342
-    second: Arkanoid_7
-  - first:
-      213: -107408646014249372
-    second: Arkanoid_8
-  - first:
-      213: 599423065893476975
-    second: Arkanoid_9
-  - first:
-      213: -3884566114852952640
-    second: Arkanoid_10
-  - first:
-      213: -4398692371290222561
-    second: Arkanoid_11
-  - first:
-      213: -7574474118002280611
-    second: Arkanoid_12
+      213: 4977487313153024822
+    second: Arkanoid_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -126,7 +105,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 1500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -195,12 +174,12 @@ TextureImporter:
       name: Arkanoid_0
       rect:
         serializedVersion: 2
-        x: 819
-        y: 2854
-        width: 345
-        height: 226
+        x: 243
+        y: 4599
+        width: 499
+        height: 499
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +195,12 @@ TextureImporter:
       name: Arkanoid_1
       rect:
         serializedVersion: 2
-        x: 2016
-        y: 2867
-        width: 372
-        height: 341
+        x: 1060
+        y: 4569
+        width: 502
+        height: 499
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,12 +216,12 @@ TextureImporter:
       name: Arkanoid_2
       rect:
         serializedVersion: 2
-        x: 1516
-        y: 2412
-        width: 150
-        height: 366
+        x: 2007
+        y: 4439
+        width: 265
+        height: 659
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -258,12 +237,12 @@ TextureImporter:
       name: Arkanoid_3
       rect:
         serializedVersion: 2
-        x: 1921
-        y: 2399
-        width: 148
-        height: 367
+        x: 2742
+        y: 4417
+        width: 266
+        height: 657
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -279,12 +258,12 @@ TextureImporter:
       name: Arkanoid_4
       rect:
         serializedVersion: 2
-        x: 2109
-        y: 1956
-        width: 343
-        height: 327
+        x: 3784
+        y: 3833
+        width: 1283
+        height: 1249
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -300,12 +279,12 @@ TextureImporter:
       name: Arkanoid_5
       rect:
         serializedVersion: 2
-        x: 1545
-        y: 1737
-        width: 472
-        height: 451
+        x: 0
+        y: 3741
+        width: 1103
+        height: 410
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -321,12 +300,12 @@ TextureImporter:
       name: Arkanoid_6
       rect:
         serializedVersion: 2
-        x: 125
-        y: 1504
-        width: 390
-        height: 138
+        x: 1374
+        y: 3800
+        width: 1034
+        height: 318
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -342,12 +321,12 @@ TextureImporter:
       name: Arkanoid_7
       rect:
         serializedVersion: 2
-        x: 938
-        y: 1538
-        width: 361
-        height: 141
+        x: 3972
+        y: 2348
+        width: 1578
+        height: 1430
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,78 +339,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arkanoid_8
-      rect:
-        serializedVersion: 2
-        x: 2027
-        y: 1217
-        width: 415
-        height: 364
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7848b8a547eb96fb0800000000000000
-      internalID: -4653979332966120313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arkanoid_9
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 615
-        width: 288
-        height: 401
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81fed136b91bdf350800000000000000
-      internalID: 6052188755196768024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arkanoid_10
-      rect:
-        serializedVersion: 2
-        x: 1577
-        y: 571
-        width: 289
-        height: 401
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e35347f42a541da60800000000000000
-      internalID: 7697009801572922686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Arkanoid_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2456
-        height: 458
+        x: 594
+        y: 2759
+        width: 854
+        height: 846
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -447,12 +363,12 @@ TextureImporter:
       name: Arkanoid_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2143
-        width: 784
-        height: 786
+        x: 1658
+        y: 2976
+        width: 533
+        height: 638
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -468,10 +384,10 @@ TextureImporter:
       name: Arkanoid_13
       rect:
         serializedVersion: 2
-        x: 1383
-        y: 2865
-        width: 510
-        height: 398
+        x: 2650
+        y: 2960
+        width: 602
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,6 +397,132 @@ TextureImporter:
       bones: []
       spriteID: 861ad20b91b3faa00800000000000000
       internalID: 769899042819645800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arkanoid_14
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 2124
+        width: 602
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735d4055747235cc0800000000000000
+      internalID: -3723589279582726857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arkanoid_15
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 2094
+        width: 714
+        height: 510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b189fe7cb1b162b0800000000000000
+      internalID: -5592993839075196490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arkanoid_16
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 2094
+        width: 667
+        height: 665
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5a1509898f33200800000000000000
+      internalID: 158743746028086707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arkanoid_17
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1076
+        width: 402
+        height: 575
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b1a0a3f8bb27de0800000000000000
+      internalID: -1336799915547157690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arkanoid_18
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 1122
+        width: 3905
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501eaf908cb45de90800000000000000
+      internalID: -7001606723144589051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arkanoid_19
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 270
+        width: 401
+        height: 573
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633ef76e656931540800000000000000
+      internalID: 4977487313153024822
       vertices: []
       indices: 
       edges: []
