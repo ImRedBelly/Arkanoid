@@ -21,7 +21,6 @@ public class Block : MonoBehaviour
 
 
 
-
     SpriteRenderer spriteImage;
     GameManager gameManager;
     LevelManager levelManager;
@@ -29,6 +28,7 @@ public class Block : MonoBehaviour
 
     void Start()
     {
+
         chance = Random.Range(0, 100);
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
@@ -47,14 +47,6 @@ public class Block : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Ball[] ball = FindObjectsOfType<Ball>();  // при коллизии с мячом он проверяет, взрывной ли он, если да, то взрывается
-        foreach (Ball balls in ball)
-        {
-            if (balls.explosive) // тут проверка
-            {
-                balls.ExplodeBall(); 
-            }
-        }
         if (isInvisible)
         {
             spriteImage.enabled = true;

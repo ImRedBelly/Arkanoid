@@ -95,6 +95,14 @@ public class Ball : MonoBehaviour
                 Restart();
             }
         }
+        if (explosive)
+        {
+            ActivExplosive();
+            if (collision.gameObject.CompareTag("Alien"))
+            {
+                ExplodeBall();
+            }
+        }
     }
     public void Dublicate()
     {
