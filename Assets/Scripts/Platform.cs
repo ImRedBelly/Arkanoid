@@ -28,8 +28,6 @@ public class Platform : MonoBehaviour
             }
             else
             {
-
-
                 Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseWorldPosition.x = Mathf.Clamp(mouseWorldPosition.x, -MaxX, MaxX);
                 transform.position = new Vector2(mouseWorldPosition.x, transform.position.y);
@@ -41,7 +39,7 @@ public class Platform : MonoBehaviour
     {
         if (ball.isRevers)
         {
-            particlesMagnet.gameObject.SetActive(true);  // если включен магнит, то включается партикл
+            particlesMagnet.gameObject.SetActive(true);
         }
     }
 }

@@ -85,13 +85,10 @@ public class GameManager : MonoBehaviour
     {
         health--;
         ControlHeart();
-        if (health == 0)
+        if (health <= 0)
         {
-
             pauseActiv = true;
-            SceneManager.LoadScene(2);
-            //restart.gameObject.SetActive(true);
-            //restart.text = "Ваш счет: " + score + "\n Нажмите R для restart ";
+            SceneManager.LoadScene(7);
         }
     }
 

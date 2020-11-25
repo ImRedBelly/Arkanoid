@@ -5,11 +5,9 @@ public class Ball : MonoBehaviour
     GameManager gameManager;
     SpriteRenderer sp;
 
-
     public Rigidbody2D rb;
     public Platform platform;
     public Ball[] balls;
-
 
     public float speed;
     public bool isStarted;
@@ -22,7 +20,7 @@ public class Ball : MonoBehaviour
     public ParticleSystem fuze;  // партикл горения фитиля 
     public Sprite bombBall;  // спрайт взрывного мяча
     public float explosiveRadius; // радиус 
-    public bool explosive = false; 
+    public bool explosive = false;
 
     void Start()
     {
@@ -85,23 +83,15 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isRevers)
+        if (isRevers && collision.gameObject.CompareTag("Platform"))
         {
-            platform.MahnetTrue();
-            if (collision.gameObject.CompareTag("Platform"))
-            {
-                yPosition = transform.position.y;
-                xDelta = transform.position.x - platform.transform.position.x;
-                Restart();
-            }
+            yPosition = transform.position.y;
+            xDelta = transform.position.x - platform.transform.position.x;
+            Restart();
         }
-        if (explosive)
+        if (explosive && collision.gameObject.CompareTag("Alien"))
         {
-            ActivExplosive();
-            if (collision.gameObject.CompareTag("Alien"))
-            {
-                ExplodeBall();
-            }
+            ExplosiveBall();
         }
     }
     public void Dublicate()
@@ -109,15 +99,14 @@ public class Ball : MonoBehaviour
         Ball newBall = Instantiate(this);
         newBall.Restart();
         newBall.speed = speed;
+
         if (isRevers)
         {
             newBall.ActivateMagnet();
         }
         if (explosive)
         {
-            //newBall.ExplodeBall();
             newBall.ActivExplosive();
-            newBall.BomberBall();
         }
     }
     public void Speed(float factorSpeed)
@@ -125,32 +114,14 @@ public class Ball : MonoBehaviour
         speed *= factorSpeed;
         rb.velocity = rb.velocity.normalized * speed;
     }
-    public void ExplodeBall()                       // метод поиска блоков при взрывном мяче! вызывается в Block           ИДИ В BLOCK
+    public void ExplosiveBall()
     {
         int layerMask = LayerMask.GetMask("Alien");
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosiveRadius, layerMask);
         foreach (Collider2D col in colliders)
         {
             Block block = col.GetComponent<Block>();
-            if (block.isNotDestroy)
-            {
-                Destroy(col.gameObject);
-            }
-            else
-            {
-                block.DestroyBlock();
-            }
-        }
-    }
-    public void BomberBall()          // метод который делаем мяч взрывной    
-    {
-        balls = FindObjectsOfType<Ball>();
-
-        foreach (Ball ball in balls)
-        {
-            ball.sp = GetComponent<SpriteRenderer>();  // меняет картинку на бомбу
-            ball.sp.sprite = bombBall;      
-            ball.fuze.gameObject.SetActive(true); // включает фитиль
+            block.DestroyBlock();
         }
     }
     public void ActivateMagnet()
@@ -160,6 +131,9 @@ public class Ball : MonoBehaviour
     public void ActivExplosive()
     {
         explosive = true;
+        sp = GetComponent<SpriteRenderer>();
+        sp.sprite = bombBall;
+        fuze.gameObject.SetActive(true);
     }
     void OnDrawGizmos()
     {

@@ -10,15 +10,12 @@ public class ExplosiveBall : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void ApplyEffect()            // пикап ищет все мячи и говорит им что они взрывный
+    void ApplyEffect()
     {
         Ball[] ball = FindObjectsOfType<Ball>();
         foreach (Ball balls in ball)
         {
             balls.ActivExplosive();   
-            balls.BomberBall();            // меняет картинки всем и включает партикл фитиля
         }
-
-
     }
 }

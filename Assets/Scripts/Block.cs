@@ -19,8 +19,6 @@ public class Block : MonoBehaviour
     public bool explosive;
 
 
-
-
     SpriteRenderer spriteImage;
     GameManager gameManager;
     LevelManager levelManager;
@@ -69,7 +67,7 @@ public class Block : MonoBehaviour
         }
     }
 
-    public void DestroyBlock() //уничтожение блока
+    public void DestroyBlock()
     {
         gameManager.AddScore(point);
         levelManager.BlockDestroyed();

@@ -6,9 +6,7 @@ public class ShieldPickup : MonoBehaviour
     public Shield shield;
     void Awake()
     {
-        shield = Instantiate(shield,new Vector3(2f, -6.2f ,0f), Quaternion.identity);  // Пикап щита создает щит 
-
-     //тут он его находит     ИДИ В SHIELD
+        shield = Instantiate(shield, new Vector3(2f, -6.2f, 0f), Quaternion.identity);  // Пикап щита создает щит 
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
