@@ -9,14 +9,17 @@ public class GameManager : MonoBehaviour
     public Text pause;
     public Text point;
 
+    public static string keyBestScore = "bestRecord";
 
     public int score;
     public int health = 3;
     public bool pauseActiv;
 
+    [Header("Sounds")]
+    public AudioClip soundPause;
+    AudioManager audioManager;
     void Awake()
     {
-       
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
         for (int i = 0; i < gameManagers.Length; i++)
         {
@@ -26,6 +29,8 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Start()
@@ -39,11 +44,13 @@ public class GameManager : MonoBehaviour
         {
             if (pauseActiv)
             {
+                audioManager.PlaySound(soundPause);
                 Time.timeScale = 1f;
                 pauseActiv = false;
             }
             else
             {
+                audioManager.PlaySound(soundPause);
                 Time.timeScale = 0f;
                 pauseActiv = true;
             }
@@ -96,6 +103,15 @@ public class GameManager : MonoBehaviour
     {
         score += addScore;
         point.text = "POINTS: " + score;
+        SaveBestScore(); //DELETE
+    }
+    public void SaveBestScore()
+    {
+        int oldBestScore = PlayerPrefs.GetInt("bestRecord");
+        if(oldBestScore < score)
+        {
+            PlayerPrefs.SetInt("bestRecord", score);
+        }
     }
 
 

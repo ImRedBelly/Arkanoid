@@ -352,11 +352,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Alien
       objectReference: {fileID: 0}
-    - target: {fileID: 7976917941289398040, guid: 26c6145a13cc970418458ef406cc32f5,
-        type: 3}
-      propertyPath: explosive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7976917941289398043, guid: 26c6145a13cc970418458ef406cc32f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1099,21 +1094,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 7480495027582518446, guid: 8fc66f391d29078438935dea947145d8,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.5849056
-      objectReference: {fileID: 0}
-    - target: {fileID: 7480495027582518446, guid: 8fc66f391d29078438935dea947145d8,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.44419718
-      objectReference: {fileID: 0}
-    - target: {fileID: 7480495027582518446, guid: 8fc66f391d29078438935dea947145d8,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.44419718
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fc66f391d29078438935dea947145d8, type: 3}

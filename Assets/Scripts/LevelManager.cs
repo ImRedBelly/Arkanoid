@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int blockCount;
+    
     public void BlockCreated()
     {
         blockCount++;
@@ -17,5 +18,8 @@ public class LevelManager : MonoBehaviour
             int index = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(index + 1);
         }
+
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.SaveBestScore();
     }
 }

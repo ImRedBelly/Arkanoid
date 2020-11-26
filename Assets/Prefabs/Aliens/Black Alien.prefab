@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.294, y: 1.0474799}
+    oldSize: {x: 0.99538463, y: 0.8057537}
     newSize: {x: 1.3750001, y: 1.0494808}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,3 +147,4 @@ MonoBehaviour:
   isInvisible: 0
   explosiveRadius: 0
   explosive: 0
+  soundDestroyBlock: {fileID: 8300000, guid: fc0f4df37cddc9b479d2238c4870a1d9, type: 3}

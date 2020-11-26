@@ -135,3 +135,4 @@ MonoBehaviour:
   isInvisible: 0
   explosiveRadius: 3
   explosive: 1
+  soundDestroyBlock: {fileID: 8300000, guid: fc0f4df37cddc9b479d2238c4870a1d9, type: 3}

@@ -2,12 +2,14 @@
 
 public class Ball : MonoBehaviour
 {
+    public Ball[] balls;
+    public Platform platform;
+
     GameManager gameManager;
     SpriteRenderer sp;
+    Rigidbody2D rb;
+    AudioSource audioSource;
 
-    public Rigidbody2D rb;
-    public Platform platform;
-    public Ball[] balls;
 
     public float speed;
     public bool isStarted;
@@ -17,11 +19,18 @@ public class Ball : MonoBehaviour
     float xDelta;
 
     [Header("Explosive")]
+    public AudioClip explosiveModeSound;
     public ParticleSystem fuze;  // партикл горения фитиля 
     public Sprite bombBall;  // спрайт взрывного мяча
     public float explosiveRadius; // радиус 
     public bool explosive = false;
 
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        
+    }
     void Start()
     {
         platform = FindObjectOfType<Platform>();
@@ -83,6 +92,8 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        audioSource.Play();
+
         if (isRevers && collision.gameObject.CompareTag("Platform"))
         {
             yPosition = transform.position.y;
@@ -134,6 +145,7 @@ public class Ball : MonoBehaviour
         sp = GetComponent<SpriteRenderer>();
         sp.sprite = bombBall;
         fuze.gameObject.SetActive(true);
+        audioSource.clip = explosiveModeSound;
     }
     void OnDrawGizmos()
     {

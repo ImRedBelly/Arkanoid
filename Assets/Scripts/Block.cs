@@ -18,21 +18,27 @@ public class Block : MonoBehaviour
     public float explosiveRadius;
     public bool explosive;
 
+   // AudioSource audioSource;
 
     SpriteRenderer spriteImage;
     GameManager gameManager;
     LevelManager levelManager;
+    AudioManager audioManager;
 
-
+    [Header("Sounds")]
+    public AudioClip soundDestroyBlock;
+    //public AudioClip soundExplosiveBlock;
+    private void Awake()
+    {
+        //audioSource = GetComponent<AudioSource>();
+        audioManager = FindObjectOfType<AudioManager>();
+        spriteImage = GetComponent<SpriteRenderer>();
+    }
     void Start()
     {
-
         chance = Random.Range(0, 100);
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
-
-        spriteImage = GetComponent<SpriteRenderer>();
-
 
         if (!isNotDestroy)
         {
@@ -69,6 +75,7 @@ public class Block : MonoBehaviour
 
     public void DestroyBlock()
     {
+        audioManager.PlaySound(soundDestroyBlock);
         gameManager.AddScore(point);
         levelManager.BlockDestroyed();
         Destroy(gameObject);
