@@ -38,31 +38,24 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
+    public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (pauseActiv)
         {
-            if (pauseActiv)
-            {
-                audioManager.PlaySound(soundPause);
-                Time.timeScale = 1f;
-                pauseActiv = false;
-            }
-            else
-            {
-                audioManager.PlaySound(soundPause);
-                Time.timeScale = 0f;
-                pauseActiv = true;
-            }
-            pause.gameObject.SetActive(pauseActiv);
+            audioManager.PlaySound(soundPause);
+            Time.timeScale = 1f;
+            pauseActiv = false;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        else
         {
-            Restart();
+            audioManager.PlaySound(soundPause);
+            Time.timeScale = 0f;
+            pauseActiv = true;
         }
+        pause.gameObject.SetActive(pauseActiv);
     }
 
-    void Restart()
+    public void Restart()
     {
         score = 0;
         health = 3;

@@ -99,7 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlesMagnet: {fileID: 2535538869185592385}
   autoPlay: 0
-  MaxX: 7.61
+  MaxX: 9.4
+  speed: 18
 --- !u!60 &4130741692570285513
 PolygonCollider2D:
   m_ObjectHideFlags: 0

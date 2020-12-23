@@ -124,6 +124,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupPrefab:
   - {fileID: 7682387598417540159, guid: bf6a11d99f54469419a1fdf2a0ab1498, type: 3}
+  - {fileID: 4026907305641961042, guid: 87c70edeb33f9bc4f90ff5a0a3222008, type: 3}
+  - {fileID: 4026907305641961042, guid: bc1bf1b1541f4984e8c0ca42eb4e90d0, type: 3}
+  - {fileID: 5872153583513344033, guid: 5e6132e42175d6a4b92f5df8807060b5, type: 3}
+  - {fileID: 7682387598417540159, guid: 97c5e6b075d561a4caff2c2a9f6e3016, type: 3}
+  - {fileID: 3288360692406367198, guid: 23bc5bbc9d80e5c49a6ddab5a3f6b18e, type: 3}
+  - {fileID: 3288360692406367198, guid: badff2852f5c5f941938ebedff9bbdbe, type: 3}
+  - {fileID: 2537171089040697270, guid: 39cc1d7da47e1ba4199b98e7acff7cbf, type: 3}
+  - {fileID: 2537171089040697270, guid: d5e6054d0fe5c664e85bbdba31ea6d0a, type: 3}
+  - {fileID: 7522561909897821292, guid: e80319fbee46cfb4fb7fdaef65a7897e, type: 3}
+  - {fileID: 2311677771889485265, guid: 75ae5f6393d0cde49ad1d3203106d435, type: 3}
+  - {fileID: 2311677771889485265, guid: 3c235f27cc49cc24bba2e6882d7efbe4, type: 3}
+  - {fileID: 7682387598417540159, guid: 06619144850916d40aa52890c42ae7eb, type: 3}
+  - {fileID: 7682387598417540159, guid: 499b3c87c791f904e9320c7e22c5c461, type: 3}
   parcikleEffectPrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   alien:
   - {fileID: -5561750705826590871, guid: 03ffb740404891548b5c04452b939009, type: 3}
@@ -136,4 +149,4 @@ MonoBehaviour:
   isInvisible: 0
   explosiveRadius: 0
   explosive: 0
-  soundDestroyBlock: {fileID: 8300000, guid: fc0f4df37cddc9b479d2238c4870a1d9, type: 3}
+  soundDestroyBlock: {fileID: 8300000, guid: 9f9f82de1ee3fa64e9f95e5de9166bd1, type: 3}

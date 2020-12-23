@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        
+
     }
     void Start()
     {
@@ -50,9 +50,13 @@ public class Ball : MonoBehaviour
     public void StartBall()
     {
         PositionBall();
-        if (!gameManager.pauseActiv && Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            AddForceBall();
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                AddForceBall();
+            }
         }
     }
     public void PositionBall()
@@ -63,8 +67,7 @@ public class Ball : MonoBehaviour
     }
     public void AddForceBall()
     {
-        //Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
-        Vector2 force = new Vector2(0, 1);
+        Vector2 force = new Vector2(Random.Range(-5.0f, 5.0f), 1);
         rb.velocity = (force.normalized * speed);
         isStarted = true;
     }

@@ -352,6 +352,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Alien
       objectReference: {fileID: 0}
+    - target: {fileID: 7976917941289398040, guid: 26c6145a13cc970418458ef406cc32f5,
+        type: 3}
+      propertyPath: explosiveRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7976917941289398043, guid: 26c6145a13cc970418458ef406cc32f5,
         type: 3}
       propertyPath: m_LocalPosition.x
